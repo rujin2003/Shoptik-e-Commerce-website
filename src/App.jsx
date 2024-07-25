@@ -14,6 +14,7 @@ import {
   News,
 } from "./pages"
 import ReactGA from "react-ga4"
+import Gallery from "./pages/Gallery"
 const measurementID = "G-Y1EV1Q38PH"
 ReactGA.initialize(measurementID)
 function App() {
@@ -46,7 +47,7 @@ function App() {
 
         <Route path="/features" element={<Features />} />
         <Route path="/services" element={<Services />} />
-        <Route path="/news" element={<News />} />
+        <Route path="/gallery" element={<Gallery />} />
         <Route path="*" element={<Error />} />
       </Routes>
       <Footer />
