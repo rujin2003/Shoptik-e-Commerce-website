@@ -27,7 +27,7 @@ import View_button from "./View_button"
 import Order_summary from "./Order_summary"
 import Empty_cart from "./Empty_cart"
 import Stripe_Checkout from "./Stripe_Checkout"
-import Cart_Button from "./Cart_Button"
+import ProfileButton from "./ProfileButton"
 import NotFound from "./NotFound"
 import CartItems from "./CartItems"
 import Stars from "./Stars"
@@ -37,7 +37,7 @@ export {
   Stars,
   CartItems,
   NotFound,
-  Cart_Button,
+  ProfileButton,
   Stripe_Checkout,
   Empty_cart,
   Order_summary,

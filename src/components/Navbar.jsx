@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 import { navLinks } from "../utils/constants"
 import { BsList } from "react-icons/bs"
-import { Sidebar, Logo, Cart_Button } from "../components"
+import { Sidebar, Logo, ProfileButton } from "../components"
 import { useProductsContext } from "../context/products_context"
 
 const Navbar = () => {
@@ -26,7 +26,7 @@ const Navbar = () => {
             })}
           </div>
           <div className=" hidden md:flex ">
-            <Cart_Button />
+            <ProfileButton />
           </div>
 
           {/* Mobile version */}
@@ -40,7 +40,7 @@ const Navbar = () => {
             >
               <BsList className="h-6 w-6" />
             </button>
-            <Cart_Button />
+            <ProfileButton />
           </section>
         </div>
       </nav>
