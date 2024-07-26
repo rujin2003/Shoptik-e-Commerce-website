@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import image1 from '../assets/2678259_183.jpg';
 import image2 from '../assets/10917697_19119935.jpg';
 import image3 from '../assets/1127071_1544.jpg';
@@ -38,18 +38,41 @@ const styles = {
     position: 'relative', 
     overflow: 'hidden',
     width: '100%',
-    height: '250px',
-    transition: 'transform 0.3s ease-in-out' 
+    paddingBottom: '125%', // Aspect ratio of 4:5 for consistent image dimensions
+    transition: 'transform 0.3s ease-in-out',
   },
   galleryItemHover: {
     transform: 'scale(1.1)'
   },
   backImage: { 
+    position: 'absolute',
+    top: '0',
+    left: '0',
     width: '100%', 
     height: '100%', 
-    objectFit: 'cover' 
+    objectFit: 'cover',
   },
- 
+  pageUpButton: {
+    display: 'none', // Initially hidden
+    position: 'fixed',
+    bottom: '20px',
+    right: '20px',
+    width: '50px',
+    height: '50px',
+    backgroundColor: '#000',
+    color: '#fff',
+    borderRadius: '50%',
+    textAlign: 'center',
+    lineHeight: '50px',
+    fontSize: '24px',
+    cursor: 'pointer',
+    zIndex: '1000',
+  },
+  '@media (max-width: 768px)': {
+    pageUpButton: {
+      display: 'block', // Display only on mobile
+    },
+  },
 };
 
 const Gallery = () => {
@@ -73,6 +96,14 @@ const Gallery = () => {
 
   console.log('Images array:', images);
 
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const handlePageUpClick = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -83,7 +114,10 @@ const Gallery = () => {
         <div style={styles.sheet}>
           <div className="u-clearfix u-sheet u-sheet-1">
             <h2 className="u-custom-font u-font-montserrat u-text u-text-default u-text-1" style={styles.heading}>Our Gallery</h2>
-            <p className="u-custom-font u-font-montserrat u-text u-text-2" style={styles.subheading}>Some text</p>
+            <p className="u-custom-font u-font-montserrat u-text u-text-2" style={styles.subheading}>
+              Discover the art of felt production through our curated gallery. Witness the intricate details and 
+              craftsmanship that go into every piece. Each image tells a story of tradition, skill, and creativity.
+            </p>
           </div>
         </div>
       </section>
@@ -103,12 +137,14 @@ const Gallery = () => {
           </div>
         </div>
       </section>
-      <div 
-        style={styles.pageUpButton} 
-        onClick={handlePageUpClick}
-      >
-        ↑
-      </div>
+      {isMobile && (
+        <div 
+          style={styles.pageUpButton} 
+          onClick={handlePageUpClick}
+        >
+          ↑
+        </div>
+      )}
     </div>
   );
 };
