@@ -39,10 +39,6 @@ const styles = {
     overflow: 'hidden',
     width: '100%',
     paddingBottom: '125%', // Aspect ratio of 4:5 for consistent image dimensions
-    transition: 'transform 0.3s ease-in-out',
-  },
-  galleryItemHover: {
-    transform: 'scale(1.1)'
   },
   backImage: { 
     position: 'absolute',
@@ -51,6 +47,10 @@ const styles = {
     width: '100%', 
     height: '100%', 
     objectFit: 'cover',
+    transition: 'transform 0.3s ease-in-out',
+  },
+  backImageHover: {
+    transform: 'scale(1.1)'
   },
   pageUpButton: {
     display: 'none', // Initially hidden
@@ -128,10 +128,14 @@ const Gallery = () => {
               <div 
                 style={styles.galleryItem} 
                 key={index}
-                onMouseEnter={(e) => e.currentTarget.style.transform = styles.galleryItemHover.transform}
-                onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
               >
-                <img src={src} alt={`Gallery Image ${index + 1}`} style={styles.backImage} />
+                <img 
+                  src={src} 
+                  alt={`Gallery Image ${index + 1}`} 
+                  style={styles.backImage} 
+                  onMouseEnter={(e) => e.currentTarget.style.transform = styles.backImageHover.transform}
+                  onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+                />
               </div>
             ))}
           </div>

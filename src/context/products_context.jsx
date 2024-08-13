@@ -48,10 +48,14 @@ export const ProductsProvider = ({ children }) => {
 
   // Fetch all products
   const fetchAllProducts = async (url) => {
+   
     dispatch({ type: GET_PRODUCTS_BEGIN })
     try {
-      const response = await axios.get(url)
+      const response = await axios.get("http://localhost:3000/products")
+      console.log("Rujin");
+      console.log(response?.data)
       const products = response.data
+      console.log(products)
       dispatch({ type: GET_PRODUCTS_SUCCESS, payload: products })
     } catch (error) {
       dispatch({ type: GET_PRODUCTS_ERROR })
@@ -83,6 +87,7 @@ export const ProductsProvider = ({ children }) => {
     </ProductsContext.Provider>
   )
 }
+
 
 // Create custom hook
 export const useProductsContext = () => {

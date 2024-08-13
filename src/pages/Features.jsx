@@ -1,14 +1,19 @@
 import React from "react"
-import { Breadcrumb } from "../components"
+
+import AboutText from "../components/About/About"
+import AboutServices from "../components/About/AboutServices/Services"
+import Testimonials from "../components/About/Testimonials/Testimonials"
+
 
 const Features = () => {
   return (
-    <section className="">
-      <Breadcrumb title="Features" />
-      <h1 className=" text-center text-2xl font-light text-gray-500 ">
-        Coming Soon...
-      </h1>
-    </section>
+     <>
+         <AboutText />
+         <AboutServices />
+         <Testimonials />
+
+       
+     </>
   )
 }
 

@@ -81,7 +81,7 @@ const Basket = () => {
         <h2 className="w-2/3 font-light uppercase tracking-widest md:w-full md:text-2xl xl:text-4xl">
           <span className="font-black"> Premium </span> Felt Creations
         </h2>
-        <View_button title="view now" />
+       
       </div>
 
       <div 

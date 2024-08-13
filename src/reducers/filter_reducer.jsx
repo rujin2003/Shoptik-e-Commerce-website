@@ -11,13 +11,21 @@ import {
 
 const filter_reducer = (state, action) => {
   if (action.type === LOAD_PRODUCTS) {
+    // Convert the price to a number when loading the products
+    const productsWithParsedPrices = action.payload.map((product) => ({
+      ...product,
+      price: parseFloat(product.price.replace('$', '')),
+    }));
+
     // Get the maximum price of the product
-    let maxPriceOfProduct = action.payload.map((product) => product.price)
+    let maxPriceOfProduct = productsWithParsedPrices.map(
+      (product) => product.price
+    )
     maxPriceOfProduct = Math.max(...maxPriceOfProduct)
     return {
       ...state,
-      all_products: [...action.payload],
-      filtered_products: [...action.payload],
+      all_products: [...productsWithParsedPrices],
+      filtered_products: [...productsWithParsedPrices],
       filters: {
         ...state.filters,
         max_price: maxPriceOfProduct,
@@ -64,19 +72,22 @@ const filter_reducer = (state, action) => {
     const { all_products } = state
     const { text, category, company, price, shipping, color } = state.filters
     let tempProducts = [...all_products]
-    // Search product
+
+    // Text filter
     if (text) {
       tempProducts = tempProducts.filter((product) => {
-        return product.name.toLowerCase().includes(text)
+        return product.name.toLowerCase().includes(text.toLowerCase())
       })
     }
+
     // Category filter
     if (category !== "all") {
       tempProducts = tempProducts.filter(
         (product) => product.category === category
       )
     }
-    // Company / Brand filter
+
+    // Company filter
     if (company !== "all") {
       tempProducts = tempProducts.filter(
         (product) => product.company === company
@@ -86,7 +97,7 @@ const filter_reducer = (state, action) => {
     // Color filter
     if (color !== "all") {
       tempProducts = tempProducts.filter((product) => {
-        return product.colors.find((colorButton) => colorButton === color)
+        return product.colors.includes(color)
       })
     }
 
@@ -95,7 +106,7 @@ const filter_reducer = (state, action) => {
 
     // Shipping filter
     if (shipping) {
-      tempProducts = tempProducts.filter((product) => product.shipping === true)
+      tempProducts = tempProducts.filter((product) => product.shipping === "Free shipping")
     }
 
     return { ...state, filtered_products: tempProducts }
@@ -115,7 +126,7 @@ const filter_reducer = (state, action) => {
       },
     }
   }
-  
+
   throw new Error(`No matching "${action.type}" - action type `)
 }
 

@@ -24,8 +24,8 @@ const SingleProduct = () => {
   const { id } = useParams()
 
   useEffect(() => {
-    fetchSingleProduct(`${url}${id}`)
-    console.log(product)
+    fetchSingleProduct(`${"http://localhost:3000/products/"}${id}`)
+   
     window.scrollTo(0, 0)
   }, [id])
 
@@ -54,8 +54,14 @@ const SingleProduct = () => {
 
   const { name, description, images, price, reviews, stars, stock } = product
   return (
+    
+    
+   
     <>
       <Breadcrumb title={name} product />
+
+
+
       <div className="container mx-auto my-10 grid gap-16 px-5 md:grid-cols-2 xl:my-32 xl:px-28  ">
         {/* Left */}
         <ProductImages product={product} images={images} />

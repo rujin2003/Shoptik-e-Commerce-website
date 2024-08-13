@@ -41,6 +41,7 @@ exports.handler = async () => {
         exclusive,
         new_in_market,
       } = fields
+
       const { url } = images[0]
       return {
         id,

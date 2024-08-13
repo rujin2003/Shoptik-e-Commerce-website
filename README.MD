@@ -41,6 +41,7 @@ You can access the live version of the Shoptik eCommerce by following this link 
 ![App Screenshot](https://res.cloudinary.com/die12ywpb/image/upload/v1677599343/screencapture-shoptik-netlify-app-2023-02-28-21_14_57_io0yvv.png)
 ## Lessons Learned
 
+
 - Integrating Stripe payment on the frontend and backend using Stripe API
 - Creating a secure and scalable backend using serverless functions
 - Implementing user authentication and authorization using Auth0
@@ -51,6 +52,8 @@ You can access the live version of the Shoptik eCommerce by following this link 
 - Writing clean and maintainable code for long-term project sustainability
 - Handling errors and debugging issues in a full-stack project
 - Ensuring the security of user information and payment transactions.
+
+
 
 
 ## Acknowledgements
@@ -65,7 +68,7 @@ You can access the live version of the Shoptik eCommerce by following this link 
 
 ## Design Inspiration
 - [Behance](https://www.behance.net/gallery/85274215/Furniture-e-Commerce-Website-Landing-Page-Exploration)
-
+ 
 ## License
 Shoptik is licensed under the MIT License. See the LICENSE file for more information.
 [MIT](LICENSE)

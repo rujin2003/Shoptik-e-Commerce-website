@@ -3,6 +3,8 @@ import { ProductImage, Product_title } from "../components"
 import { View_button } from "../components"
 
 const CategoryProducts = ({ products, category_name }) => {
+  
+
   return (
     <>
       <div className="grid grid-cols-1 gap-6 border-b py-8 md:grid-cols-2 lg:grid-cols-4">

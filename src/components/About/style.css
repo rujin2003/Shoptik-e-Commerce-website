@@ -1,0 +1,223 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+
+:root {
+  --color-violet: #262250;
+  --color-blue-primary: #4270ec;
+  --color-white: white;
+  --color-light-gray: #fbece8;
+  --linear-bg: linear-gradient(
+    40deg,
+    rgba(65, 82, 205, 1) 0%,
+    rgba(203, 63, 183, 1) 35%,
+    rgba(250, 192, 120, 1) 100%
+  );
+  --box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
+    rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+  --radius: 1.5rem;
+  --transition: all 400ms ease;
+  --container-width-lg: 75%;
+  --container-width-md: 80%;
+  --container-width-sm: 90%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-violet);
+}
+a:hover {
+  color: var(--color-blue-primary);
+}
+
+img {
+  display: block;
+}
+
+.btn {
+  outline: none;
+  border: 1px solid transparent;
+  color: var(--color-blue-primary);
+  font-size: 0.9rem;
+  letter-spacing: 0.1rem;
+  padding: 0.65rem 1.3rem;
+  border-radius: 6rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: transparent;
+  transition: var(--transition);
+}
+
+.btn-primary {
+  background: var(--color-blue-primary);
+  color: white;
+}
+
+.btn:hover {
+  border-color: var(--color-blue-primary);
+  color: var(--color-blue-primary);
+  background: transparent;
+}
+
+.container {
+  width: var(--container-width-lg);
+  margin: 0 auto;
+}
+
+.pos-rel {
+  position: relative;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins";
+  background: var(--color-white);
+  line-height: 1.25;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-violet);
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+/* Additional Styles for Headline */
+.headline {
+  font-weight: bold;
+  font-size: 2.5rem; /* Increase the size */
+}
+
+.text {
+  font-size: 0.9rem;
+  color: gray;
+  margin: 1rem 0;
+}
+
+section,
+footer {
+  margin-top: 5rem !important;
+}
+
+ul {
+  list-style: none;
+}
+
+.about__container > .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7rem;
+}
+
+.about__container {
+  position: relative;
+}
+
+.about__container::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  height: 120%;
+  width: 40%;
+  background: var(--linear-bg);
+  z-index: -1;
+  border-radius: var(--radius) 0 0 var(--radius);
+  box-shadow: var(--box-shadow);
+}
+
+/* Centering the 'Get In Touch' Button */
+.about__buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.about__buttons button {
+  margin-right: 1.5rem;
+}
+
+.about__buttons a {
+  display: none; /* Hide the 'Our Services' link */
+}
+
+.about__image img {
+  width: 90%;
+  border-radius: var(--radius);
+  box-shadow: var(--box-shadow);
+}
+
+.about__image {
+  position: relative;
+}
+
+.CircularProgressbar {
+  width: 4rem;
+}
+
+.CircularProgressbar .CircularProgressbar-path {
+  stroke: var(--color-blue-primary);
+}
+
+.CircularProgressbar .CircularProgressbar-text {
+  fill: var(--color-blue-primary);
+}
+
+.about__progress {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 1.4rem;
+  background: white;
+  border-radius: var(--radius);
+  padding: 1rem;
+  width: min-content;
+  position: absolute;
+  top: 30%;
+  left: -10%;
+  box-shadow: var(--box-shadow);
+}
+
+.about__progress h4 {
+  width: max-content;
+}
+
+/* ================ MEDIA QUERIES (MEDIUM DEVICES) ============= */
+@media screen and (max-width: 1024px) {
+  .about__container .container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .about__container::before {
+    display: none;
+  }
+}
+
+/* ================ MEDIA QUERIES (SMALL DEVICES) ============= */
+@media screen and (max-width: 600px) {
+  .about__container .container {
+    width: var(--container-width-lg) !important;
+  }
+  .about__buttons {
+    display: grid;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .about__buttons button {
+    margin: 0;
+  }
+}

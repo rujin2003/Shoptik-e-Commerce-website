@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link } from "react-router-dom"
 import { useProductsContext } from "../context/products_context"
 import { Loading, Error, ProductImage, Product_title } from "../components"
@@ -15,7 +15,9 @@ const HomeProduct = () => {
   } = useFilterContext()
   if (products_loading) return <Loading />
   if (products_error) return <Error />
-  const categories = getUniqueValues(all_products, "category")
+  const dummydata=useState([{id:1,sale:"sold",new_in_market:false},{id:2,sale:"sold2",new_in_market:false},{id:3,sale:"sold3",new_in_market:false},{id:4,sale:"sold4",new_in_market:false}])
+  const categories = getUniqueValues(all_products, "category");
+  
   return (
     <>
       <section className=" mt-20 md:mt-28 ">
@@ -77,8 +79,13 @@ const HomeProduct = () => {
                     </div>
                   )}
                 </article>
+                // <div key={product.id} className="flex border-[1.5px] border-black border-solid bg-slate-400 w-[100px] h-[100px]">
+                //     id is {product.id}
+                //     <p> sale:{product.sale}</p>
+                // </div>
               )
             })}
+          
           </div>
 
           {/* Button */}
