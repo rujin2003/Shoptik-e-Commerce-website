@@ -2,9 +2,9 @@ import React from 'react';
 import image from "../assets/image.png";
 
 const Header = () => {
+    
     return (
         <div className="overflow-x-hidden bg-gray-50">
-           
             <section className="relative py-4 sm:py-6 lg:py-8 xl:pb-0">
                 <div className="relative px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
                     <div className="max-w-3xl mx-auto text-center">
