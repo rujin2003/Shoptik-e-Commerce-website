@@ -2,17 +2,17 @@ import Cart from "./Cart"
 import Checkout from "./Checkout"
 import Completion from "./Completion"
 import Error from "./Error"
-import Features from "./Features"
+import AboutUs from "./AboutUs"
 import Home from "./Home"
 import News from "./News"
 import Products from "./Products"
 import ProtectedRoute from "./ProtectedRoute"
-import Services from "./Services"
+import ContactUs from "./ContactUs"
 import SingleProduct from "./SingleProduct"
 
 export {
-  Features,
-  Services,
+  AboutUs,
+  ContactUs,
   News,
   Completion,
   Cart,

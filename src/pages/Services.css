@@ -1,0 +1,10 @@
+/* Services.css */
+
+
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+    .cards-section {
+      justify-content: center;
+      margin-left: 10%;
+    }
+  }
+  

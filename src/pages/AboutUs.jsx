@@ -189,38 +189,12 @@ This version is concise while still capturing the essence of your brand.
               >
                 {/* SVG Path */}
               </svg>
-              <p className="mt-8 text-base font-bold text-gray-900">
-               Join us and get exclusive deals and resources.
-              </p>
-              <form
-                action="#"
-                method="post"
-                className="relative mt-4"
-              >
-                <div className="absolute transitiona-all duration-1000 opacity-30 inset-0 bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-lg filter group-hover:opacity-100 group-hover:duration-200"></div>
-                <div className="relative space-y-4 sm:flex sm:space-y-0 sm:items-end">
-                  <div className="flex-1">
-                    <label htmlFor="email" className="sr-only">
-                      Email address
-                    </label>
-                    <div>
-                      <input
-                        type="email"
-                        name="email"
-                        id="email"
-                        className="block w-full px-4 py-3 sm:py-3.5 text-base font-medium text-gray-900 placeholder-gray-500 border border-gray-300 rounded-lg sm:rounded-l-lg sm:rounded-r-none sm:text-sm focus:ring-gray-900 focus:border-gray-900"
-                        placeholder="Enter email address"
-                      />
-                    </div>
-                  </div>
-                  <button
-                    type="submit"
-                    className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-3 sm:text-sm text-base sm:py-3.5 font-semibold text-white transition-all duration-200 bg-gray-900 border border-transparent rounded-lg sm:rounded-r-lg sm:rounded-l-none hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
-                  >
-                    Join Now
-                  </button>
-                </div>
-              </form>
+             
+             
+              <form action="/contactus" method="post" className="relative mt-4 flex justify-center">
+
+  
+</form>
             </div>
           </div>
         </div>
@@ -252,7 +226,7 @@ This version is concise while still capturing the essence of your brand.
 
 
 
-const Features = () => {
+const AboutUs = () => {
   const [showAll, setShowAll] = useState(false);
 
   const toggleShowAll = () => {
@@ -270,7 +244,7 @@ const Features = () => {
       {/* Our Team Section */}
       <section style={{ padding: "40px", textAlign: "center", backgroundColor: "#eaeaea" }}>
         <h2 style={{ fontSize: "3rem", color: "black", marginBottom: "40px" }}>
-          Our <span style={{ color: "#4BC2A6" }}>Team</span>
+          Our <span style={{ color: "#229799" }}>Team</span>
         </h2>
         <div style={{ 
             display: "grid", 
@@ -297,4 +271,4 @@ const Features = () => {
   );
 };
 
-export default Features;
+export default AboutUs;

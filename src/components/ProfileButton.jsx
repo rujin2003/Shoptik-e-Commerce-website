@@ -1,31 +1,20 @@
-import { useAuth0 } from "@auth0/auth0-react"
-import { BsPersonPlus, BsPersonDash } from "react-icons/bs"
+import { useNavigate } from 'react-router-dom';
+import { BsPersonPlus } from 'react-icons/bs';
 
 const ProfileButton = () => {
-  const { user, loginWithRedirect, logout } = useAuth0()
+  const navigate = useNavigate();
+
   return (
     <div className="flex items-center space-x-8">
-      {user ? (
-        <button
-          title="Logout"
-          className="flex hover:text-primary"
-          onClick={() => {
-            logout({ logoutParams: { returnTo: window.location.origin } })
-          }}
-        >
-          <BsPersonDash className="h-6 w-6" />
-        </button>
-      ) : (
-        <button
-          title="Login"
-          className="flex"
-          onClick={() => loginWithRedirect()}
-        >
-          <BsPersonPlus className="h-6 w-6" />
-        </button>
-      )}
+      <button
+        title="Go to Sign In"
+        className="flex hover:text-primary"
+        onClick={() => navigate('/signin')} 
+      >
+        <BsPersonPlus className="h-6 w-6" />
+      </button>
     </div>
-  )
-}
+  );
+};
 
-export default ProfileButton
+export default ProfileButton;
